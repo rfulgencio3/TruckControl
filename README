@@ -1,17 +1,41 @@
-Projeto criado em ASP.Net Core 3.1 para simular uma API de cadastro de Caminhões utilizando banco de dados "InMemory"
+Projeto criado em ASP.Net Core 3.1 para simular uma API de cadastro de Caminhões 
 
 API:
 EF Core
+Banco de dados 'InMemory'
 Documentação Swagger
 Rota: api/truck-register
 Endpoints: 
+
+GET
+/api/truck-register
 Get - Busca todos os registros
-GetById - Busca os registros com base no Id
+
+POST
+/api/truck-register
+Register a new Truck.
 Post - Realiza o cadastro de um novo registro
+
+GET
+/api/truck-register/{id}
+GetById - Busca os registros com base no Id
+
+PUT
+/api/truck-register/{id}
 Put - Realiza a alteração de um registro
+
+DELETE
+/api/truck-register/{id}
 Delete - Realiza a remoção de um registro com base no Id
 
-Tests
-Utilizando a biblioteca xUnit, é possivel realizar testes unitários nos endpoints e algumas funções da API
+Projeto de Tests
+Utilizando a biblioteca xUnit, é possivel realizar testes unitários nos endpoints e algumas funções da API, conforme abaixo:
+Validate Fabrication Year with Correct Year Passed	< 1 ms	Category [Fabrication Year Validation]	
+Validate Fabrication Year with Incorrect Year Passed	9 ms	Category [Fabrication Year Validation]	
+Validate Model Year with Correct Year Passed	< 1 ms	Category [Model Year Validation]	
+Validate Model Year with Incorrect Year Passed	< 1 ms	Category [Model Year Validation]	
+TruckRegisterController Post Passed	308 ms	Category [Validate Truck Register]	
+TruckRegisterController GetById Passed	1 ms	Category [Validate Truck Register]	
+TruckRegisterController Get Passed	3 ms	Category [Validate Truck Register]	
 
 Update: Nas proximas versões será possível realizar o migrate dos dados.
